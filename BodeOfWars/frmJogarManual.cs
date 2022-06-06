@@ -315,7 +315,7 @@ namespace BodeOfWars
             verMesa = Jogo.VerificarMesa(idPartida);
             string[] verIlha = verMesa.Split(',');
             string valorIlha = verIlha[0];
-            lblTamanho.Text = valorIlha;
+            lblTamanho.Text = verMesa.Replace(valorIlha[0],' ');
         }
     }
 }

@@ -323,7 +323,7 @@
             this.btnVerificarIlha.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnVerificarIlha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerificarIlha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerificarIlha.Location = new System.Drawing.Point(1383, 338);
+            this.btnVerificarIlha.Location = new System.Drawing.Point(1396, 338);
             this.btnVerificarIlha.Name = "btnVerificarIlha";
             this.btnVerificarIlha.Size = new System.Drawing.Size(117, 43);
             this.btnVerificarIlha.TabIndex = 26;

@@ -194,6 +194,7 @@
             this.txtListarJogadores.Location = new System.Drawing.Point(869, 427);
             this.txtListarJogadores.Multiline = true;
             this.txtListarJogadores.Name = "txtListarJogadores";
+            this.txtListarJogadores.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtListarJogadores.Size = new System.Drawing.Size(335, 92);
             this.txtListarJogadores.TabIndex = 13;
             // 

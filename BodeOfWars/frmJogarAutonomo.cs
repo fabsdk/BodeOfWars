@@ -21,13 +21,11 @@ namespace BodeOfWars
 
         private string[] cartasMesa;
 
-        private string[] Ultima;
-
         string iniciarPartida;
 
         private string verMesa;
 
-        private bool escolheIlha = true;
+        private bool escolherIlha = true;
 
         public frmJogarAutonomo()
         {
@@ -37,7 +35,8 @@ namespace BodeOfWars
 
         private void btnJogarPartida_Click(object sender, EventArgs e)
         {
-
+            verificarMao();
+            tmrJogar.Enabled = true;
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
@@ -50,10 +49,12 @@ namespace BodeOfWars
 
             tmrJogar.Enabled = false;
             jogarBode(cartasMesa);
+            verficarVez();
             verificarMesa();
             verificarMao();
             mostrarHistorico();
             jogarIlha();
+            verificarIlha();
             tmrJogar.Enabled = true;
         }
 
@@ -100,7 +101,7 @@ namespace BodeOfWars
             verMesa = verMesa.Trim();
             string[] mesa = verMesa.Split('\n');
 
-            Ultima = new string[4];
+            string[] ultima = new string[4];
             string[] cartasMesa = new string[4];
             int i = 0;
             bool desenharMesa = false;
@@ -115,7 +116,7 @@ namespace BodeOfWars
                 {
                     desenharMesa = true;
                     string[] bode = carta.Split(',');
-                    string[] cartaBode = EncontrarCarta(bode, 1);
+                    string[] cartaBode = encontrarCarta(bode, 1);
                     string auxCarta = "";
                     int cont = 0;
                     foreach (string elemento in cartaBode)
@@ -139,16 +140,16 @@ namespace BodeOfWars
             foreach (string item in cartasMesa)
             {
 
-                if (item == null || Ultima[contador] == null)
+                if (item == null || ultima[contador] == null)
                 {
-                    if (item != Ultima[contador])
+                    if (item != ultima[contador])
                     {
                         desenharMesa = true;
                     }
                     break;
                 }
 
-                if (Ultima[contador].Equals(item))
+                if (ultima[contador].Equals(item))
                 {
                     desenharMesa = false;
                 }
@@ -160,7 +161,7 @@ namespace BodeOfWars
             if (desenharMesa == true)
             {
                 mostrarCarta(cartasMesa, pnlMesa);
-                Ultima = cartasMesa;
+                ultima = cartasMesa;
             }
         }
 
@@ -184,104 +185,69 @@ namespace BodeOfWars
                 tmrJogar.Enabled = false;
                 this.Close();
             }
-            else
+            else if(cartasMesa == null) 
              Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
+        }
 
+        private void verificarIlha()
+        {
+            verMesa = Jogo.VerificarMesa(idPartida);
+            string[] verIlha = verMesa.Split(',');
+            string valorIlha = verIlha[0];
+            lblTamanho.Text = verMesa.Replace(valorIlha[0], ' ');
+        }
 
-            if (cartasMesa != null)
-            {
-                int menorCartaMesa = 51;
-                foreach (string carta in cartasMesa)
-                {
-                    if (carta != null)
-                    {
-                        string[] elemento = carta.Split(',');
-                        int valorCarta = Int32.Parse(elemento[0]);
-                        if (valorCarta < menorCartaMesa)
-                        {
-                            menorCartaMesa = valorCarta;
-                        }
-                    }
-                }
+        private void verificarMeusBodes()
+        {
 
-                List<int> menorValoresMao = new List<int>();
-                List<int> maiorValoresMao = new List<int>();
-                foreach (string carta in cartasMao)
-                {
-                    int valorCarta = Int32.Parse(carta);
-                    if (valorCarta < menorCartaMesa)
-                    {
-                        menorValoresMao.Add(valorCarta);
-                    }
-                    else
-                    {
-                        maiorValoresMao.Add(valorCarta);
-                    }
-                }
-
-                if (menorValoresMao.Count > 0)
-                {
-                    int cartaJogar = menorValoresMao.Last<int>();
-                    Jogo.Jogar(idJogador, senhaJogador, cartaJogar);
-                    return;
-                }
-                else
-                {
-                    int cartaJogar = maiorValoresMao.First<int>();
-                    Jogo.Jogar(idJogador, senhaJogador, cartaJogar);
-
-                    return;
-                }
-            }
         }
 
         private void jogarIlha()
         {
-            string valores = Jogo.VerificarIlha(idJogador, senhaJogador);
-            if (escolheIlha == true)
+            string tamanhos = Jogo.VerificarIlha(idJogador, senhaJogador);
+            if (escolherIlha == true)
             {
-                string[] valorIlha = valores.Split(',');
+                string[] tamanhoIlha = tamanhos.Split(',');
 
-                EscolhaIlha(valorIlha[0]);
+                escolhaIlha(tamanhoIlha[0]);
 
             }
         }
 
-        private void EscolhaIlha(string valorIlha)
+        private void escolhaIlha(string tamanhoIlha)
         {
-            string valores = Jogo.VerificarIlha(idJogador, senhaJogador);
-            valores = valores.Replace('\r', ' ');
-            valores = valores.Replace('\n', ' ');
-            valores = valores.Trim();
+            string tamanhos = Jogo.VerificarIlha(idJogador, senhaJogador);
+            tamanhos = tamanhos.Replace('\r', ' ');
+            tamanhos = tamanhos.Replace('\n', ' ');
+            tamanhos = tamanhos.Trim();
 
 
-            string[] valoresIlhas = valores.Split(',');
-            int valorIlha1, valorIlha2, entradaValorIlha;
+            string[] tamanhosIlhas = tamanhos.Split(',');
+            int tamanhoIlha0, tamanhoIlha1, entradaIlha;
 
 
-            if (false == Int32.TryParse(valoresIlhas[0], out valorIlha1))
+            if (false == Int32.TryParse(tamanhosIlhas[0], out tamanhoIlha0))
             {
                 return;
             }
-            if (false == Int32.TryParse(valoresIlhas[1], out valorIlha2))
+            if (false == Int32.TryParse(tamanhosIlhas[1], out tamanhoIlha1))
             {
                 return;
             }
-            if (false == Int32.TryParse(valorIlha, out entradaValorIlha))
+            if (false == Int32.TryParse(tamanhoIlha, out entradaIlha))
             {
                 return;
             }
 
-            if (valorIlha1 == entradaValorIlha ||
-                valorIlha2 == entradaValorIlha)
+            if (tamanhoIlha0 == entradaIlha || tamanhoIlha1 == entradaIlha)
             {
-                Jogo.DefinirIlha(idJogador, senhaJogador, Int32.Parse(valorIlha));
+                Jogo.DefinirIlha(idJogador, senhaJogador, Int32.Parse(tamanhoIlha));
                 return;
             }
             MessageBox.Show("Valor de ilha invalido");
         }
 
-        private string[] EncontrarCarta(string[] cartaMao, int idChecar)
+        private string[] encontrarCarta(string[] cartaMao, int idCarta)
         {
 
             string cartas = Jogo.ListarCartas();
@@ -296,7 +262,7 @@ namespace BodeOfWars
             {
                 string[] aux = cartasValores[i].Split(',');
                 int valorCarta = Int32.Parse(aux[0]);
-                int valorMao = Int32.Parse(cartaMao[idChecar]);
+                int valorMao = Int32.Parse(cartaMao[idCarta]);
 
                 if (valorCarta == valorMao)
                 {
@@ -334,7 +300,7 @@ namespace BodeOfWars
                 Label lblQuantidadeBode = new Label();
                 img.Size = new Size(110, 165);
 
-                string[] carta = EncontrarCarta(item.Split(','), 0);
+                string[] carta = encontrarCarta(item.Split(','), 0);
 
                 if (carta == null)
                 {
@@ -352,7 +318,7 @@ namespace BodeOfWars
                             {
                                 string historico = Jogo.ExibirNarracao(idPartida).Replace('\r', ' ').Trim();
                                 string[] fimJogo = historico.Split('\n');
-                                MessageBox.Show($"Partida Finalizada \n {fimJogo[0]}");
+                                MessageBox.Show($"Parábens :) \n {fimJogo[0]}");
                                 break;
                             }
                         }

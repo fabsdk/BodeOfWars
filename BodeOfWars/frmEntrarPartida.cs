@@ -100,6 +100,7 @@ namespace BodeOfWars
                 string currPartida;
                 currPartida = lstListarPartidas.SelectedItem.ToString();
                 string[] Partidas = currPartida.Split(',');
+                idPartida = Int32.Parse(Partidas[0]);
                 string jogadores = Jogo.ListarJogadores(idPartida);
                 txtListarJogadores.Text = jogadores;
 
