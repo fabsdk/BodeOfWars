@@ -43,8 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblQuantidadeBodes = new System.Windows.Forms.Label();
             this.tmrJogar = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +52,10 @@
             this.btnIniciarPartida.BackColor = System.Drawing.Color.Black;
             this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPartida.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnIniciarPartida.Location = new System.Drawing.Point(1511, 22);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(1007, 14);
+            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
-            this.btnIniciarPartida.Size = new System.Drawing.Size(378, 67);
+            this.btnIniciarPartida.Size = new System.Drawing.Size(252, 44);
             this.btnIniciarPartida.TabIndex = 0;
             this.btnIniciarPartida.Text = "INICIAR PARTIDA";
             this.btnIniciarPartida.UseVisualStyleBackColor = false;
@@ -67,9 +66,10 @@
             this.btnJogarPartida.BackColor = System.Drawing.Color.Black;
             this.btnJogarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJogarPartida.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnJogarPartida.Location = new System.Drawing.Point(1095, 22);
+            this.btnJogarPartida.Location = new System.Drawing.Point(730, 14);
+            this.btnJogarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJogarPartida.Name = "btnJogarPartida";
-            this.btnJogarPartida.Size = new System.Drawing.Size(378, 67);
+            this.btnJogarPartida.Size = new System.Drawing.Size(252, 44);
             this.btnJogarPartida.TabIndex = 1;
             this.btnJogarPartida.Text = "JOGAR PARTIDA";
             this.btnJogarPartida.UseVisualStyleBackColor = false;
@@ -79,18 +79,20 @@
             // 
             this.pnlMao.BackColor = System.Drawing.Color.Transparent;
             this.pnlMao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMao.Location = new System.Drawing.Point(429, 184);
+            this.pnlMao.Location = new System.Drawing.Point(317, 110);
+            this.pnlMao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMao.Name = "pnlMao";
-            this.pnlMao.Size = new System.Drawing.Size(1449, 297);
+            this.pnlMao.Size = new System.Drawing.Size(1201, 194);
             this.pnlMao.TabIndex = 2;
             // 
             // pnlMesa
             // 
             this.pnlMesa.BackColor = System.Drawing.Color.Transparent;
             this.pnlMesa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMesa.Location = new System.Drawing.Point(456, 658);
+            this.pnlMesa.Location = new System.Drawing.Point(304, 428);
+            this.pnlMesa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMesa.Name = "pnlMesa";
-            this.pnlMesa.Size = new System.Drawing.Size(940, 297);
+            this.pnlMesa.Size = new System.Drawing.Size(628, 194);
             this.pnlMesa.TabIndex = 3;
             // 
             // pictureBox1
@@ -98,9 +100,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::BodeOfWars.Properties.Resources.pec;
-            this.pictureBox1.Location = new System.Drawing.Point(1692, 837);
+            this.pictureBox1.Location = new System.Drawing.Point(1007, 525);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(195, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -108,21 +111,23 @@
             // txtHistorico
             // 
             this.txtHistorico.BackColor = System.Drawing.Color.Red;
-            this.txtHistorico.Location = new System.Drawing.Point(12, 73);
+            this.txtHistorico.Location = new System.Drawing.Point(8, 47);
+            this.txtHistorico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHistorico.Multiline = true;
             this.txtHistorico.Name = "txtHistorico";
             this.txtHistorico.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtHistorico.Size = new System.Drawing.Size(368, 563);
+            this.txtHistorico.Size = new System.Drawing.Size(247, 367);
             this.txtHistorico.TabIndex = 5;
             // 
             // txtVerificarVez
             // 
             this.txtVerificarVez.BackColor = System.Drawing.Color.Red;
-            this.txtVerificarVez.Location = new System.Drawing.Point(12, 715);
+            this.txtVerificarVez.Location = new System.Drawing.Point(8, 471);
+            this.txtVerificarVez.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtVerificarVez.Multiline = true;
             this.txtVerificarVez.Name = "txtVerificarVez";
             this.txtVerificarVez.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtVerificarVez.Size = new System.Drawing.Size(368, 288);
+            this.txtVerificarVez.Size = new System.Drawing.Size(247, 308);
             this.txtVerificarVez.TabIndex = 6;
             // 
             // label1
@@ -131,9 +136,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label1.Location = new System.Drawing.Point(1542, 501);
+            this.label1.Location = new System.Drawing.Point(1028, 326);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 29);
+            this.label1.Size = new System.Drawing.Size(176, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "TAMANHO DA ILHA:";
             // 
@@ -143,9 +149,10 @@
             this.label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label.Location = new System.Drawing.Point(79, 658);
+            this.label.Location = new System.Drawing.Point(53, 428);
+            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(186, 32);
+            this.label.Size = new System.Drawing.Size(131, 24);
             this.label.TabIndex = 12;
             this.label.Text = "É A VEZ DE:";
             // 
@@ -155,9 +162,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(96, 22);
+            this.label2.Location = new System.Drawing.Point(64, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 32);
+            this.label2.Size = new System.Drawing.Size(127, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "HISTÓRICO:";
             // 
@@ -167,9 +175,10 @@
             this.lblTamanho.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTamanho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTamanho.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lblTamanho.Location = new System.Drawing.Point(1808, 501);
+            this.lblTamanho.Location = new System.Drawing.Point(1205, 326);
+            this.lblTamanho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTamanho.Name = "lblTamanho";
-            this.lblTamanho.Size = new System.Drawing.Size(30, 29);
+            this.lblTamanho.Size = new System.Drawing.Size(19, 20);
             this.lblTamanho.TabIndex = 14;
             this.lblTamanho.Text = "T";
             // 
@@ -179,9 +188,10 @@
             this.label3.BackColor = System.Drawing.Color.Red;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(1025, 121);
+            this.label3.Location = new System.Drawing.Point(683, 70);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 40);
+            this.label3.Size = new System.Drawing.Size(158, 29);
             this.label3.TabIndex = 15;
             this.label3.Text = "MINHA MÃO";
             // 
@@ -191,9 +201,10 @@
             this.label4.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label4.Location = new System.Drawing.Point(898, 596);
+            this.label4.Location = new System.Drawing.Point(599, 387);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 40);
+            this.label4.Size = new System.Drawing.Size(90, 26);
             this.label4.TabIndex = 16;
             this.label4.Text = "MESA";
             // 
@@ -201,37 +212,14 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(1690, 805);
+            this.label5.Location = new System.Drawing.Point(1021, 487);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 29);
+            this.label5.Size = new System.Drawing.Size(181, 25);
             this.label5.TabIndex = 17;
             this.label5.Text = "Pinky e Cérebro";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label6.Location = new System.Drawing.Point(1520, 542);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(282, 29);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "QUANTIDADE BODES:";
-            // 
-            // lblQuantidadeBodes
-            // 
-            this.lblQuantidadeBodes.AutoSize = true;
-            this.lblQuantidadeBodes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblQuantidadeBodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidadeBodes.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lblQuantidadeBodes.Location = new System.Drawing.Point(1808, 542);
-            this.lblQuantidadeBodes.Name = "lblQuantidadeBodes";
-            this.lblQuantidadeBodes.Size = new System.Drawing.Size(30, 29);
-            this.lblQuantidadeBodes.TabIndex = 19;
-            this.lblQuantidadeBodes.Text = "B";
             // 
             // tmrJogar
             // 
@@ -240,13 +228,11 @@
             // 
             // frmJogarAutonomo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BodeOfWars.Properties.Resources.fundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1901, 1015);
-            this.Controls.Add(this.lblQuantidadeBodes);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(1256, 573);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnIniciarPartida);
@@ -263,6 +249,7 @@
             this.Controls.Add(this.btnJogarPartida);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmJogarAutonomo";
             this.Text = "frmJogarAutonomo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -287,8 +274,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblQuantidadeBodes;
         private System.Windows.Forms.Timer tmrJogar;
     }
 }
