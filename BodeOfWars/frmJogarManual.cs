@@ -65,12 +65,6 @@ namespace BodeOfWars
 
         private void btnVerificarHistorico_Click(object sender, EventArgs e)
         {
-            if(iniciarPartida.Contains("ERRO: "))
-            {
-                MessageBox.Show(iniciarPartida, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-
             txtHistorico.Text = Jogo.ExibirNarracao(idPartida);
         }
 
