@@ -199,7 +199,7 @@
             this.pnlMesa.Location = new System.Drawing.Point(769, 307);
             this.pnlMesa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMesa.Name = "pnlMesa";
-            this.pnlMesa.Size = new System.Drawing.Size(585, 176);
+            this.pnlMesa.Size = new System.Drawing.Size(707, 176);
             this.pnlMesa.TabIndex = 13;
             // 
             // btnVerificarMao

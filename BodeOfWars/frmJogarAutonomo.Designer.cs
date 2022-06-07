@@ -92,7 +92,7 @@
             this.pnlMesa.Location = new System.Drawing.Point(304, 428);
             this.pnlMesa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMesa.Name = "pnlMesa";
-            this.pnlMesa.Size = new System.Drawing.Size(628, 194);
+            this.pnlMesa.Size = new System.Drawing.Size(1180, 194);
             this.pnlMesa.TabIndex = 3;
             // 
             // pictureBox1
@@ -100,7 +100,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::BodeOfWars.Properties.Resources.pec;
-            this.pictureBox1.Location = new System.Drawing.Point(1007, 525);
+            this.pictureBox1.Location = new System.Drawing.Point(1228, 704);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 141);
@@ -214,7 +214,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(1021, 487);
+            this.label5.Location = new System.Drawing.Point(1232, 664);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(181, 25);
@@ -232,7 +232,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BodeOfWars.Properties.Resources.fundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1256, 573);
+            this.ClientSize = new System.Drawing.Size(1547, 856);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnIniciarPartida);

@@ -25,13 +25,16 @@ namespace BodeOfWars
 
         private string verMesa;
 
-        private int idRodada; 
+        private int idRodada;
+
+        private int vezJogador;
+
+        string jogarIlhas;
 
         public frmJogarAutonomo()
         {
             InitializeComponent();
         }
-
 
         private void btnJogarPartida_Click(object sender, EventArgs e)
         {
@@ -190,7 +193,7 @@ namespace BodeOfWars
                 Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[1]));
             else if (idRodada == 7)
                 Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
-            else if (idRodada == 8)
+            else if (idRodada == 8 && vezJogador == idJogador)
                 Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
 
         }
@@ -210,11 +213,10 @@ namespace BodeOfWars
             verificarStatus = verificarStatus.Replace("\r", "");
             verificarStatus = verificarStatus.Replace("\n", "");
             string[] statusIlha = verificarStatus.Split(',');
-            string jogarIlha = statusIlha[3];
-            int vezJogador = Int32.Parse(statusIlha[1]);
+            jogarIlhas = statusIlha[3];
+            vezJogador = Int32.Parse(statusIlha[1]);
 
-
-            if (jogarIlha == "I" && vezJogador == idJogador)
+            if (jogarIlhas == "I" && vezJogador == idJogador)
             {
                 string[] verificarTamanho = tamanhos.Split(',');
                 int tamanhoIlha0 = Int32.Parse(verificarTamanho[0]);
