@@ -25,7 +25,7 @@ namespace BodeOfWars
 
         private string verMesa;
 
-        private bool escolherIlha = true;
+        private int idRodada; 
 
         public frmJogarAutonomo()
         {
@@ -167,16 +167,14 @@ namespace BodeOfWars
 
         private void mostrarHistorico()
         {
-            if (iniciarPartida.Contains("ERRO: "))
-            {
-                MessageBox.Show(iniciarPartida, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-
             txtHistorico.Text = Jogo.ExibirNarracao(idPartida);
         }
         private void jogarBode(string[] cartasMesa)
         {
+            string verRodada = Jogo.VerificarVez(idPartida);
+            string[] verificarRodada = verRodada.Split(',');
+            idRodada = Int32.Parse(verificarRodada[2]);
+
             string verificarVez = Jogo.VerificarVez(idPartida);
             string[] partida = verificarVez.Split(',');
 
@@ -185,8 +183,16 @@ namespace BodeOfWars
                 tmrJogar.Enabled = false;
                 this.Close();
             }
-            else if(cartasMesa == null) 
-             Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
+            else if (idRodada == 1 || idRodada == 2 || idRodada == 3 || idRodada == 4)
+                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
+            else if (idRodada == 5)
+                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[3]));
+            else if (idRodada == 6)
+                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[2]));
+            else if (idRodada == 7)
+                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[1]));
+            else if (idRodada == 8)
+                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
         }
 
         private void verificarIlha()
@@ -197,54 +203,35 @@ namespace BodeOfWars
             lblTamanho.Text = verMesa.Replace(valorIlha[0], ' ');
         }
 
-        private void verificarMeusBodes()
-        {
-
-        }
-
         private void jogarIlha()
         {
             string tamanhos = Jogo.VerificarIlha(idJogador, senhaJogador);
-            if (escolherIlha == true)
-            {
-                string[] tamanhoIlha = tamanhos.Split(',');
+            string verificarStatus = Jogo.VerificarVez(idPartida);
+            verificarStatus = verificarStatus.Replace("\r", "");
+            verificarStatus = verificarStatus.Replace("\n", "");
+            string[] statusIlha = verificarStatus.Split(',');
+            string jogarIlha = statusIlha[3];
+            int vezJogador = Int32.Parse(statusIlha[1]);
 
-                escolhaIlha(tamanhoIlha[0]);
+
+            if (jogarIlha == "I" && vezJogador == idJogador)
+            {
+                string[] verificarTamanho = tamanhos.Split(',');
+                int tamanhoIlha0 = Int32.Parse(verificarTamanho[0]);
+                int tamanhoIlha1 = Int32.Parse(verificarTamanho[1]);
+
+                if (tamanhoIlha0 > tamanhoIlha1)
+                {
+                    Jogo.DefinirIlha(idJogador, senhaJogador, tamanhoIlha1);
+                    return;
+                }
+                else
+                {
+                    Jogo.DefinirIlha(idJogador, senhaJogador, tamanhoIlha0);
+                    return;
+                }
 
             }
-        }
-
-        private void escolhaIlha(string tamanhoIlha)
-        {
-            string tamanhos = Jogo.VerificarIlha(idJogador, senhaJogador);
-            tamanhos = tamanhos.Replace('\r', ' ');
-            tamanhos = tamanhos.Replace('\n', ' ');
-            tamanhos = tamanhos.Trim();
-
-
-            string[] tamanhosIlhas = tamanhos.Split(',');
-            int tamanhoIlha0, tamanhoIlha1, entradaIlha;
-
-
-            if (false == Int32.TryParse(tamanhosIlhas[0], out tamanhoIlha0))
-            {
-                return;
-            }
-            if (false == Int32.TryParse(tamanhosIlhas[1], out tamanhoIlha1))
-            {
-                return;
-            }
-            if (false == Int32.TryParse(tamanhoIlha, out entradaIlha))
-            {
-                return;
-            }
-
-            if (tamanhoIlha0 == entradaIlha || tamanhoIlha1 == entradaIlha)
-            {
-                Jogo.DefinirIlha(idJogador, senhaJogador, Int32.Parse(tamanhoIlha));
-                return;
-            }
-            MessageBox.Show("Valor de ilha invalido");
         }
 
         private string[] encontrarCarta(string[] cartaMao, int idCarta)
@@ -318,7 +305,7 @@ namespace BodeOfWars
                             {
                                 string historico = Jogo.ExibirNarracao(idPartida).Replace('\r', ' ').Trim();
                                 string[] fimJogo = historico.Split('\n');
-                                MessageBox.Show($"Parábens :) \n {fimJogo[0]}");
+                                MessageBox.Show($"Parabéns :) \n {fimJogo[0]}");
                                 break;
                             }
                         }
