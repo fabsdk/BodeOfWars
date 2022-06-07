@@ -188,7 +188,7 @@ namespace BodeOfWars
             else if (idRodada == 1 || idRodada == 2 || idRodada == 3 || idRodada == 4)
                 Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[0]));
             else if (idRodada == 5)
-                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[3]));
+                Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[2]));
             else if (idRodada == 6)
                 Jogo.Jogar(idJogador, senhaJogador, Int32.Parse(cartasMao[1]));
             else if (idRodada == 7)
